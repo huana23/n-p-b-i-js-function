@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- bosstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+<body>
+    <!-- bài1 -->
+    <div class="container">
+        <div class="w-50 mt-5">
+            <h2>Quản lí tuyển sinh</h2>
+            <form>
+                <select id="khuVuc" style="margin-bottom: 10px;">
+                    <option>Chọn khu vực</option>
+                    <option value="khuA">A</option>
+                    <option value="khuB">B</option>
+                    <option value="khuC">C</option>
+                </select>
+
+                <select id="doiTuong" style="margin-bottom: 10px;">
+                    <option>Đối tượng</option>
+                    <option value="doiTuong1">1</option>
+                    <option value="doiTuong2">2</option>
+                    <option value="doiTuong3">3</option>
+                </select>
+
+                <div class="form-group" style="margin-bottom: 10px;">
+                    <input type="number" class="form-control" id="diemMon1" placeholder="Điểm môn thứ 1">
+                </div>
+
+                <div class="form-group" style="margin-bottom: 10px;">
+                    <input type="number" class="form-control" id="diemMon2" placeholder="Điểm môn thứ 2">
+                </div>
+
+                <div class="form-group" style="margin-bottom: 10px;">
+                    <input type="number" class="form-control" id="diemMon3" placeholder="Điểm môn thứ 3">
+                </div>
+
+                
+        
+                <button type="button" onclick="ketQua()" class="btn btn-success">Kết quả</button>
+            </form>
+        
+                <p id="txtketQua" class="alert alert-success"></p>
+
+        </div>
+    </div>
+
+    <!-- bài 2 -->
+    <div class="container">
+        <div class="w-50 my-5">
+            <h2>Tính tiền điện</h2>
+             <form>
+                <div class="form-group" style="margin-bottom: 10px;">
+                    <input type="text" class="form-control" id="tenNguoisd" placeholder="Nhập họ tên">
+                </div>
+
+                <div class="form-group" style="margin-bottom: 10px;">
+                    <input type="text" class="form-control" id="soKM" placeholder="Nhập số KM">
+                </div>
+        
+                <button type="button" onclick="tienDien()" class="btn btn-success">Tính Tiền</button>
+            </form>
+        
+                <p id="txtThanhTien" class="alert alert-success"></p>
+        </div>
+    </div>
+
+    <!-- bài 3 -->
+    <div class="container">
+        <div class="w-50 my-5">
+            <h2>Tính thuế thu nhập cá nhân</h2>
+             <form>
+                <div class="form-group" style="margin-bottom: 10px;">
+                    <input type="text" class="form-control" id="hoTen" placeholder="Nhập họ tên">
+                </div>
+
+                <div class="form-group" style="margin-bottom: 10px;">
+                    <input type="text" class="form-control" id="tongThuNhap" placeholder="Tổng thu nhập">
+                </div>
+
+                <div class="form-group" style="margin-bottom: 10px;">
+                    <input type="text" class="form-control" id="soNguoi" placeholder="Số người phụ thuộc">
+                </div>
+        
+                <button type="button" onclick="tienThueCaNhan()" class="btn btn-success">Tính Tiền</button>
+            </form>
+        
+                <p id="txtTinhThue" class="alert alert-success"></p>
+        </div>
+    </div>
+
+    <!-- bài 4 -->
+    <div class="container">
+        <div class="w-50 my-5">
+            <h2>Tính tiền cáp</h2>
+             <form>
+                <select id="mySelect" onchange="myFunction()" style="margin-bottom: 10px;">
+                    <option value="Audi">Chọn Loại Khách Hàng</option>
+                    <option value="BMW">Nhà dân</option>
+                    <option value="Mercedes">Doanh nghiệp</option>
+                </select>
+
+                <div class="form-group" style="margin-bottom: 10px;">
+                    <input type="text" class="form-control" id="maKhachHang" placeholder="Nhập mã khách hàng">
+                </div>
+
+                <div class="form-group" style="margin-bottom: 10px;">
+                    <input type="text" class="form-control" id="soKenh" placeholder="Số kênh cao cấp">
+                </div>
+
+                <div class="form-group" style="margin-bottom: 10px;">
+                    <input type="text" class="form-control" style="display: none;" id="soKetNoi" placeholder="Số kết nối chỉ dành cho doanh nghiệp">
+                </div>
+        
+                <button type="button" onclick="tienCap()" class="btn btn-success">Tính Tiền</button>
+            </form>
+        
+                <p id="txtTienCap" class="alert alert-success"></p>
+        </div>
+    </div>
+    
+
+    <!-- bosstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+    <!-- bài 1 js -->
+    <script src="./js/bai1.js"></script>
+    <!-- bài 2 js -->
+    <script src="./js/bai2.js"></script>
+    <!-- bài 3 js -->
+    <script src="./js/bai3.js"></script>
+    <!-- bài 4 js -->
+    <script src="./js/bai4.js"></script>
+
+</body>
+</html>
